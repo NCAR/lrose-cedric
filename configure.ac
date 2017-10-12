@@ -5,13 +5,14 @@ AC_PREREQ([2.59])
 AC_INIT([CEDRIC], [97], [granger@ucar.edu])
 AC_CONFIG_AUX_DIR([config])
 AC_PREFIX_DEFAULT([/opt/local])
-AC_CONFIG_SRCDIR([source/CUTILS.c])
+AC_CONFIG_SRCDIR([cedric/source/CUTILS.c])
 # Use a config header to avoid cluttering the compiler command line with
 # all the symbol definitions.
-AC_CONFIG_HEADERS([source/config.h])
+AC_CONFIG_HEADERS([cedric/source/config.h])
 AC_CONFIG_FILES([
 Makefile
-source/Makefile
+cedric/Makefile
+cedric/source/Makefile
 tests/Makefile
 ])
 AM_INIT_AUTOMAKE

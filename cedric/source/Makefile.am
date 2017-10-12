@@ -74,8 +74,6 @@ CSRCS = \
  CGETMEM.c CUTILS.c CDATE.c COUT.c CIN.c \
  topo.c cdf_utils.c
 
-
-
 NGSRCS = \
  BCKGRND.F BLKDAT.F CODER.F \
  COLRAM.F CONTHALF.F CORR.F \

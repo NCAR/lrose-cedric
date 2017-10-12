@@ -1,2 +1,2 @@
 
-SUBDIRS = cedric
+SUBDIRS = cedric tests
