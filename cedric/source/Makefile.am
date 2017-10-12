@@ -102,11 +102,11 @@ NGSRCS = \
 # FORTRAN include does not look in /usr/include by default, so it must be
 # specified if that is where netcdf.inc is located.
 #
-FINCLUDES = -I/usr/include
+FINCLUDES = -I/usr/include -I../../../include
 AM_FFLAGS = -g -O0 -std=legacy $(DEFINES) -fno-range-check \
           -fsecond-underscore $(NETCDFINCS) $(FINCLUDES)
-AM_CFLAGS = -g -O0 $(DEFINES) $(NETCDFINCS)
-AM_LDFLAGS =
+AM_CFLAGS = -g -O0 $(DEFINES) $(NETCDFINCS) -I../../../include
+AM_LDFLAGS = -L../../../lib
 
 libcedric_a_SOURCES = $(FSRCS) $(CSRCS) $(MDVSRCS) $(GBYTESSRCS)
 
