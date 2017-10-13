@@ -1,2 +1,2 @@
 
-SUBDIRS = cedric tests
+SUBDIRS = cedric sprint tests

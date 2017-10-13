@@ -1931,7 +1931,7 @@ ac_configure="$SHELL $ac_aux_dir/configure"  # Please don't use this var.
 # all the symbol definitions.
 ac_config_headers="$ac_config_headers cedric/source/config.h"
 
-ac_config_files="$ac_config_files Makefile cedric/Makefile cedric/source/Makefile tests/Makefile"
+ac_config_files="$ac_config_files Makefile cedric/Makefile cedric/source/Makefile sprint/source/Makefile tests/Makefile"
 
 am__api_version='1.13'
 
@@ -4702,6 +4702,7 @@ do
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "cedric/Makefile") CONFIG_FILES="$CONFIG_FILES cedric/Makefile" ;;
     "cedric/source/Makefile") CONFIG_FILES="$CONFIG_FILES cedric/source/Makefile" ;;
+    "sprint/source/Makefile") CONFIG_FILES="$CONFIG_FILES sprint/source/Makefile" ;;
     "tests/Makefile") CONFIG_FILES="$CONFIG_FILES tests/Makefile" ;;
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
 
