@@ -15,6 +15,8 @@ cedric/Makefile
 cedric/source/Makefile
 sprint/Makefile
 sprint/source/Makefile
+ppi/Makefile
+ppi/source/Makefile
 tests/Makefile
 ])
 AM_INIT_AUTOMAKE

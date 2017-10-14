@@ -1,2 +1,2 @@
 
-SUBDIRS = cedric sprint tests
+SUBDIRS = cedric sprint ppi tests
