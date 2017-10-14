@@ -29,10 +29,26 @@ SRCS = AIRCHK.f	ANALYT.f	ANLACT.f	ANLREP.f	AZMFIL.f \
       myio.c	nexrad.c	DMPCHAR.f       DMPFLOAT.f      DMPINTGR.f \
       gbytes.f  sbytes.f	ishift.c	i1mach.f
 
-sprint_SOURCES = $(SRCS)
+# compile flags
 
-sprint_FFLAGS = -g -O0 -std=legacy $(DEFINES) -fno-range-check \
-          -fsecond-underscore $(FINCLUDES)
-sprint_CFLAGS = -g -O0 $(DEFINES) -I../../../include
-sprint_LDFLAGS = -L../../../lib 
+AM_CFLAGS = -I.
+AM_CFLAGS += -I../../../include
+AM_CFLAGS += -I$(prefix)/include
+AM_CFLAGS += -I/usr/include
+AM_CFLAGS += -g -O0
+
+AM_FFLAGS = $(AM_CFLAGS)
+AM_FFLAGS += -std=legacy
+AM_FFLAGS += -fno-range-check
+AM_FFLAGS += -fsecond-underscore
+AM_FFLAGS += $(NETCDFINCS)
+
+# link flags
+
+AM_LDFLAGS = -L.
+AM_LDFLAGS += -L../../../lib
+AM_LDFLAGS += -L$(prefix)/lib
+AM_LDFLAGS += -Wl,-rpath=$(prefix)/lib
+
+sprint_SOURCES = $(SRCS)
 

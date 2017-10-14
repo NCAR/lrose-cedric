@@ -1,5 +1,9 @@
-# -*- makefile -*-
-#
+###############################################
+# makefile.am template for automake
+# cedric
+###############################################
+
+# compile flags
 
 if MAKE_WITH_NCARG
 bin_PROGRAMS = cedric gcedric
@@ -102,11 +106,29 @@ NGSRCS = \
 # FORTRAN include does not look in /usr/include by default, so it must be
 # specified if that is where netcdf.inc is located.
 #
-FINCLUDES = -I/usr/include -I../../../include
-AM_FFLAGS = -g -O0 -std=legacy $(DEFINES) -fno-range-check \
-          -fsecond-underscore $(NETCDFINCS) $(FINCLUDES)
-AM_CFLAGS = -g -O0 $(DEFINES) $(NETCDFINCS) -I../../../include
-AM_LDFLAGS = -L../../../lib
+
+# compile flags
+
+AM_CFLAGS = -I.
+AM_CFLAGS += -I../../../include
+AM_CFLAGS += -I$(prefix)/include
+AM_CFLAGS += -I/usr/include
+AM_CFLAGS += -g -O0
+
+AM_FFLAGS = $(AM_CFLAGS)
+AM_FFLAGS += -std=legacy
+AM_FFLAGS += -fno-range-check
+AM_FFLAGS += -fsecond-underscore
+AM_FFLAGS += $(NETCDFINCS)
+
+# link flags
+
+AM_LDFLAGS = -L.
+AM_LDFLAGS += -L../../../lib
+AM_LDFLAGS += -L$(prefix)/lib
+AM_LDFLAGS += -Wl,-rpath=$(prefix)/lib
+
+LD_ADD = $(NETCDFLIBS) libcedric.a
 
 libcedric_a_SOURCES = $(FSRCS) $(CSRCS) $(MDVSRCS) $(GBYTESSRCS)
 
