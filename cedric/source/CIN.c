@@ -1,6 +1,7 @@
 /* workstation version */
 
 #include <stdio.h>
+#include <sys/types.h>
 #include "cedric.h"
 /*#include "./include/mdv_file.h"*/
 
@@ -559,13 +560,12 @@ void swapch2_(
 /*************************************************************/
 /* perform byte swapping for 64 bit words*/
 void
-swapem64(INJ,NUM)
-     int INJ[1000];
-     int *NUM;
+swapem64(int64_t  INJ[1000], int64_t *NUM)
 {
-  int t1,t2,t3,t4,t5,t6,t7,t8;
-  int c1,c2,c3,c4,c5,c6,c7,c8;
-  int k,i;
+
+  int64_t t1,t2,t3,t4,t5,t6,t7,t8;
+  int64_t c1,c2,c3,c4,c5,c6,c7,c8;
+  int64_t k,i;
 
   c1 = 0xff;
   c2 = c1 << 8;
