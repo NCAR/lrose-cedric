@@ -6,8 +6,8 @@
 
 #define FALSE 0
 #define TRUE  1
-#define BYTE_ORDER 1
-#define WORD_SIZE 32
-#define LINUX
+/* #define BYTE_ORDER 1 */
+/* #define WORD_SIZE 32 */
+/* #define LINUX */
 
 /* end header file */

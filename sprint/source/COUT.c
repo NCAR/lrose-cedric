@@ -1,6 +1,8 @@
 /* Cray YMP version - Or is it workstation version (LJM)*/
 
 #include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include "cedric.h" 
 
 struct files *open_files, *head;

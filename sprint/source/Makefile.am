@@ -29,17 +29,6 @@ SRCS = AIRCHK.f	ANALYT.f	ANLACT.f	ANLREP.f	AZMFIL.f \
       myio.c	nexrad.c	DMPCHAR.f       DMPFLOAT.f      DMPINTGR.f \
       gbytes.f  sbytes.f	ishift.c	i1mach.f
 
-#CSRCS = \
-	CCOSIN.c \
-	CDATE.c \
-	CINITCOS.c \
-	COUT.c \
-	SUNFOR.c \
-	dorade.c \
-	ishift.c \
-	myio.c \
-	nexrad.c
-
 #
 # FORTRAN include does not look in /usr/include by default, so it must be
 # specified if that is where netcdf.inc is located.

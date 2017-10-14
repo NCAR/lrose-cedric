@@ -5,9 +5,11 @@
 /*                   or 1 (Dec-like, little Endian) */
 /* change WORD_SIZE to be 32 or 64 */
 
+
 #define FALSE 0
 #define TRUE  1
-#define BYTE_ORDER 1
+#include <endian.h>
+/* #define BYTE_ORDER 1 */
 
 #define WORD_SIZE 32
 #define CED "CED1"

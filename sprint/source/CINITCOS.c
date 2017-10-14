@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
 #include "cedric.h"
 
 struct files *open_files;  /* linked list of open file information */
@@ -157,12 +160,12 @@ extern int cos_size;
 #else
      void swap64_(INJ, NUM)
 #endif
-     int INJ[1000];
-     int *NUM;
+     int64_t INJ[1000];
+     int64_t *NUM;
 {
-  int t1,t2,t3,t4,t5,t6,t7,t8;
-  int c1,c2,c3,c4,c5,c6,c7,c8;
-  int k,i;
+  int64_t t1,t2,t3,t4,t5,t6,t7,t8;
+  int64_t c1,c2,c3,c4,c5,c6,c7,c8;
+  int64_t k,i;
   
   c1 = 0xff;
   c2 = c1 << 8;

@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -3117,7 +3120,7 @@ float four_bytes_2_flt(c1,c2,c3,c4)
   }
 
   else {
-    mixed.ival = mixed.ival << 32;
+    mixed.ival = mixed.ival << 31;
     type = 2;
     num  = 1;
     bitoff = 0;

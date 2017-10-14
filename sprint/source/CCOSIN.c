@@ -6,6 +6,9 @@
  * Modified by Bill Anderson (MMM) to be word size and byte order independent
  */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 #include "cedric.h"
 
 #define  MAXREC           68000
@@ -23,7 +26,9 @@
 # define MAX_WORDS 512
 # define COS_BLOCK_SIZE (MAX_WORDS*SIZE_CW)
 # define NWDS64(x) (((x)-1)/SIZE_CW +1)
+#ifndef NULL
 # define NULL 0
+#endif
 
 extern FILE *fp;  /* file pointer */
 
