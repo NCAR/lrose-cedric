@@ -156,7 +156,7 @@ am__objects_1 = sprint-AIRCHK.$(OBJEXT) sprint-ANALYT.$(OBJEXT) \
 am_sprint_OBJECTS = $(am__objects_1)
 sprint_OBJECTS = $(am_sprint_OBJECTS)
 am__DEPENDENCIES_1 =
-sprint_DEPENDENCIES = $(am__DEPENDENCIES_1) libcedric.a
+sprint_DEPENDENCIES = $(am__DEPENDENCIES_1)
 sprint_LINK = $(F77LD) $(sprint_FFLAGS) $(FFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
@@ -372,10 +372,10 @@ AM_FFLAGS = -g -O0 -std=legacy $(DEFINES) -fno-range-check \
           -fsecond-underscore $(NETCDFINCS) $(FINCLUDES)
 
 AM_CFLAGS = -g -O0 $(DEFINES) $(NETCDFINCS) -I../../../include
-AM_LDFLAGS = -L../../../lib -L. -lz -lg2c
+AM_LDFLAGS = -L../../../lib -L../../cedric/source -lz
 sprint_SOURCES = $(SRCS)
 sprint_FFLAGS = -DCEDRIC_USE_NCARG=0 $(AM_FFLAGS)
-sprint_LDADD = $(NETCDFLIBS) libcedric.a
+sprint_LDADD = $(NETCDFLIBS) -lcedric
 all: all-am
 
 .SUFFIXES:

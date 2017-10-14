@@ -15,9 +15,11 @@ C           .
 C           . NOT SPECIFIED YET
 C
       PARAMETER (ITYP=7,LEV=23)
-      DIMENSION IFLDS(ITYP,LEV)
-      CHARACTER*8 CTEMP1
-      DATA IFLDS/'DM','DZ','VE','SW','CR','TI','EL',
+      INTEGER*2 IFLDS(ITYP,LEV)
+      CHARACTER*2 CIFLDS(ITYP,LEV)
+      EQUIVALENCE (IFLDS, CIFLDS)
+
+      DATA CIFLDS/'DM','DZ','VE','SW','CR','TI','EL',
      X           'SM','SZ','VF','VA','CO','TI','EL',
      X           'XM','SM','VU','SD','CF','TM','EL',
      X           'DB','ZR','VT','S2','CF','TM','EL',
@@ -40,6 +42,8 @@ C
      X           'LH','LV','VE','W2','CR','TI','AZ',
      X           'XH','XV','VE','W2','CR','TI','AZ',
      X           'XH','XV','DP','W2','RH','TI','AZ'/
+
+      CHARACTER*8 CTEMP1
 
       WRITE (CTEMP1,500)NAMIN
  500  FORMAT(A4)

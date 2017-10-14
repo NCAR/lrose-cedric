@@ -56,7 +56,12 @@ C      DATA (IDMUD(I),I=60,94)/0,510,'CR',16,2,3200,'OR',-32768,100,64,
 C     X                        0,24*' '/
 C      DATA (IDMUD(I),I=301,311)/0,2,1,0,0,'OR','IG','IN',0,0,0/
       DATA CF/ 64./
-      DATA IBL/' '/
+
+      INTEGER*1 IBL;
+      CHARACTER*1 CIBL;
+      EQUIVALENCE (IBL, CIBL)
+      DATA CIBL/' '/
+
       CHARACTER*8 IWHERE(50)
 
       DO I=1,NMD

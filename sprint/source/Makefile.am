@@ -49,8 +49,8 @@ FINCLUDES = -I/usr/include -I../../../include
 AM_FFLAGS = -g -O0 -std=legacy $(DEFINES) -fno-range-check \
           -fsecond-underscore $(NETCDFINCS) $(FINCLUDES)
 AM_CFLAGS = -g -O0 $(DEFINES) $(NETCDFINCS) -I../../../include
-AM_LDFLAGS = -L../../../lib -L. -lz -lg2c
+AM_LDFLAGS = -L../../../lib -L../../cedric/source -lz
 
 sprint_SOURCES = $(SRCS)
 sprint_FFLAGS = -DCEDRIC_USE_NCARG=0 $(AM_FFLAGS)
-sprint_LDADD = $(NETCDFLIBS) libcedric.a
+sprint_LDADD = $(NETCDFLIBS) -lcedric

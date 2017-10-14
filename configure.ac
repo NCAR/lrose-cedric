@@ -13,6 +13,7 @@ AC_CONFIG_FILES([
 Makefile
 cedric/Makefile
 cedric/source/Makefile
+sprint/Makefile
 sprint/source/Makefile
 tests/Makefile
 ])
