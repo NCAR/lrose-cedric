@@ -338,7 +338,8 @@ CPut info put misc information into the header
 C-----INCLUDE '/opt/local/netcdf-3/include/netcdf.inc'
       INCLUDE 'CEDRIC.INC'
       PARAMETER (NCMAXVAR = nf_max_vars)
-      DIMENSION ITEM(NID),VARIDS(NCMAXVAR)
+      INTEGER VARIDS(NCMAXVAR)
+      DIMENSION ITEM(NID)
       CHARACTER*8 CTEMP,VOLHEAD
       CHARACTER*8 SOURCE
       CHARACTER*4 PROJ_NAME
