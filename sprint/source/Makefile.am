@@ -1,4 +1,4 @@
-# -*- makefile -*-
+# makefile.am for sprint
 #
 
 bin_PROGRAMS = sprint
@@ -9,7 +9,7 @@ SRCS = AIRCHK.f	ANALYT.f	ANLACT.f	ANLREP.f	AZMFIL.f \
       CHKMSG.f	CINITCOS.c	COMBIN.f	CONFLD.f 	COUT.c \
       CRTOUT.f	CRTSET.f	CRTTCP.f	DOFILT.f	DORSWP.f \
       DORVOL.f 	DUMBUF.f	FEETCL.f	FFSCL.f		FILLAZ.f \
-      FILTER.f	FLAT.f		FXTABLE.f	GENAZM.f	HEDSET.f \
+      FILTER.f	FLAT.f		FXTABLE.f	GENAZM.f	GETNAME.f \
       HEDSET.f	HEDSHF.f	IGETCP2.f	IGET16.f	IGET8.f \
       IGETAI.f	IGETCP.f	IGTDAT.f	IMHSUM.f	INHSUM.f \
       INITAL.f	INITVOL.f	INPFIL.f	INTCHK.f	INTERP.f \
@@ -29,17 +29,10 @@ SRCS = AIRCHK.f	ANALYT.f	ANLACT.f	ANLREP.f	AZMFIL.f \
       myio.c	nexrad.c	DMPCHAR.f       DMPFLOAT.f      DMPINTGR.f \
       gbytes.f  sbytes.f	ishift.c	i1mach.f
 
-#
-# FORTRAN include does not look in /usr/include by default, so it must be
-# specified if that is where netcdf.inc is located.
-#
-
-FINCLUDES = -I/usr/include -I../../../include
-AM_FFLAGS = -g -O0 -std=legacy $(DEFINES) -fno-range-check \
-          -fsecond-underscore $(NETCDFINCS) $(FINCLUDES)
-AM_CFLAGS = -g -O0 $(DEFINES) $(NETCDFINCS) -I../../../include
-AM_LDFLAGS = -L../../../lib -L../../cedric/source -lz
-
 sprint_SOURCES = $(SRCS)
-sprint_FFLAGS = -DCEDRIC_USE_NCARG=0 $(AM_FFLAGS)
-sprint_LDADD = $(NETCDFLIBS) -lcedric
+
+sprint_FFLAGS = -g -O0 -std=legacy $(DEFINES) -fno-range-check \
+          -fsecond-underscore $(FINCLUDES)
+sprint_CFLAGS = -g -O0 $(DEFINES) -I../../../include
+sprint_LDFLAGS = -L../../../lib 
+

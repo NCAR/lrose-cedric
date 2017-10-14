@@ -98,10 +98,11 @@ am__objects_1 = sprint-AIRCHK.$(OBJEXT) sprint-ANALYT.$(OBJEXT) \
 	sprint-AZMFIL.$(OBJEXT) sprint-BACKREC.$(OBJEXT) \
 	sprint-BEAMIN.$(OBJEXT) sprint-BLDDES.$(OBJEXT) \
 	sprint-BLHED.$(OBJEXT) sprint-BLKDAT.$(OBJEXT) \
-	sprint-CARTAP.$(OBJEXT) CCOSIN.$(OBJEXT) CDATE.$(OBJEXT) \
-	sprint-CEDLOG.$(OBJEXT) sprint-CEDUTIL.$(OBJEXT) \
-	sprint-CHKMSG.$(OBJEXT) CINITCOS.$(OBJEXT) \
-	sprint-COMBIN.$(OBJEXT) sprint-CONFLD.$(OBJEXT) COUT.$(OBJEXT) \
+	sprint-CARTAP.$(OBJEXT) sprint-CCOSIN.$(OBJEXT) \
+	sprint-CDATE.$(OBJEXT) sprint-CEDLOG.$(OBJEXT) \
+	sprint-CEDUTIL.$(OBJEXT) sprint-CHKMSG.$(OBJEXT) \
+	sprint-CINITCOS.$(OBJEXT) sprint-COMBIN.$(OBJEXT) \
+	sprint-CONFLD.$(OBJEXT) sprint-COUT.$(OBJEXT) \
 	sprint-CRTOUT.$(OBJEXT) sprint-CRTSET.$(OBJEXT) \
 	sprint-CRTTCP.$(OBJEXT) sprint-DOFILT.$(OBJEXT) \
 	sprint-DORSWP.$(OBJEXT) sprint-DORVOL.$(OBJEXT) \
@@ -109,7 +110,7 @@ am__objects_1 = sprint-AIRCHK.$(OBJEXT) sprint-ANALYT.$(OBJEXT) \
 	sprint-FFSCL.$(OBJEXT) sprint-FILLAZ.$(OBJEXT) \
 	sprint-FILTER.$(OBJEXT) sprint-FLAT.$(OBJEXT) \
 	sprint-FXTABLE.$(OBJEXT) sprint-GENAZM.$(OBJEXT) \
-	sprint-HEDSET.$(OBJEXT) sprint-HEDSET.$(OBJEXT) \
+	sprint-GETNAME.$(OBJEXT) sprint-HEDSET.$(OBJEXT) \
 	sprint-HEDSHF.$(OBJEXT) sprint-IGETCP2.$(OBJEXT) \
 	sprint-IGET16.$(OBJEXT) sprint-IGET8.$(OBJEXT) \
 	sprint-IGETAI.$(OBJEXT) sprint-IGETCP.$(OBJEXT) \
@@ -140,7 +141,7 @@ am__objects_1 = sprint-AIRCHK.$(OBJEXT) sprint-ANALYT.$(OBJEXT) \
 	sprint-SHILBL.$(OBJEXT) sprint-SHIRBL.$(OBJEXT) \
 	sprint-SINSRT.$(OBJEXT) sprint-SKPFFVOL.$(OBJEXT) \
 	sprint-SKPVOL.$(OBJEXT) sprint-STRID.$(OBJEXT) \
-	SUNFOR.$(OBJEXT) sprint-SWAPEM.$(OBJEXT) \
+	sprint-SUNFOR.$(OBJEXT) sprint-SWAPEM.$(OBJEXT) \
 	sprint-SWAPEMC.$(OBJEXT) sprint-TAPOUT.$(OBJEXT) \
 	sprint-TPQERX.$(OBJEXT) sprint-TRPARVOL.$(OBJEXT) \
 	sprint-TRPD.$(OBJEXT) sprint-TRPPPI.$(OBJEXT) \
@@ -148,16 +149,16 @@ am__objects_1 = sprint-AIRCHK.$(OBJEXT) sprint-ANALYT.$(OBJEXT) \
 	sprint-UFCHARS.$(OBJEXT) sprint-UFNCAR.$(OBJEXT) \
 	sprint-UNCODE.$(OBJEXT) sprint-USRORIGIN.$(OBJEXT) \
 	sprint-VERSOUT.$(OBJEXT) sprint-VERTCHK.$(OBJEXT) \
-	sprint-VUNF.$(OBJEXT) sprint-WRRYDK.$(OBJEXT) dorade.$(OBJEXT) \
-	myio.$(OBJEXT) nexrad.$(OBJEXT) sprint-DMPCHAR.$(OBJEXT) \
+	sprint-VUNF.$(OBJEXT) sprint-WRRYDK.$(OBJEXT) \
+	sprint-dorade.$(OBJEXT) sprint-myio.$(OBJEXT) \
+	sprint-nexrad.$(OBJEXT) sprint-DMPCHAR.$(OBJEXT) \
 	sprint-DMPFLOAT.$(OBJEXT) sprint-DMPINTGR.$(OBJEXT) \
 	sprint-gbytes.$(OBJEXT) sprint-sbytes.$(OBJEXT) \
-	ishift.$(OBJEXT) sprint-i1mach.$(OBJEXT)
+	sprint-ishift.$(OBJEXT) sprint-i1mach.$(OBJEXT)
 am_sprint_OBJECTS = $(am__objects_1)
 sprint_OBJECTS = $(am_sprint_OBJECTS)
-am__DEPENDENCIES_1 =
-sprint_DEPENDENCIES = $(am__DEPENDENCIES_1)
-sprint_LINK = $(F77LD) $(sprint_FFLAGS) $(FFLAGS) $(AM_LDFLAGS) \
+sprint_LDADD = $(LDADD)
+sprint_LINK = $(F77LD) $(sprint_FFLAGS) $(FFLAGS) $(sprint_LDFLAGS) \
 	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -175,6 +176,10 @@ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/cedric/source
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 AM_V_CC = $(am__v_CC_@AM_V@)
@@ -187,10 +192,6 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-AM_V_lt = $(am__v_lt_@AM_V@)
-am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-am__v_lt_0 = --silent
-am__v_lt_1 = 
 F77COMPILE = $(F77) $(AM_FFLAGS) $(FFLAGS)
 AM_V_F77 = $(am__v_F77_@AM_V@)
 am__v_F77_ = $(am__v_F77_@AM_DEFAULT_V@)
@@ -331,7 +332,7 @@ SRCS = AIRCHK.f	ANALYT.f	ANLACT.f	ANLREP.f	AZMFIL.f \
       CHKMSG.f	CINITCOS.c	COMBIN.f	CONFLD.f 	COUT.c \
       CRTOUT.f	CRTSET.f	CRTTCP.f	DOFILT.f	DORSWP.f \
       DORVOL.f 	DUMBUF.f	FEETCL.f	FFSCL.f		FILLAZ.f \
-      FILTER.f	FLAT.f		FXTABLE.f	GENAZM.f	HEDSET.f \
+      FILTER.f	FLAT.f		FXTABLE.f	GENAZM.f	GETNAME.f \
       HEDSET.f	HEDSHF.f	IGETCP2.f	IGET16.f	IGET8.f \
       IGETAI.f	IGETCP.f	IGTDAT.f	IMHSUM.f	INHSUM.f \
       INITAL.f	INITVOL.f	INPFIL.f	INTCHK.f	INTERP.f \
@@ -352,30 +353,16 @@ SRCS = AIRCHK.f	ANALYT.f	ANLACT.f	ANLREP.f	AZMFIL.f \
       gbytes.f  sbytes.f	ishift.c	i1mach.f
 
 
-#CSRCS = \
-#	CCOSIN.c \
-#	CDATE.c \
-#	CINITCOS.c \
-#	COUT.c \
-#	SUNFOR.c \
-#	dorade.c \
-#	ishift.c \
-#	myio.c \
-#	nexrad.c
-
 #
 # FORTRAN include does not look in /usr/include by default, so it must be
 # specified if that is where netcdf.inc is located.
 #
-FINCLUDES = -I/usr/include -I../../../include
-AM_FFLAGS = -g -O0 -std=legacy $(DEFINES) -fno-range-check \
-          -fsecond-underscore $(NETCDFINCS) $(FINCLUDES)
-
-AM_CFLAGS = -g -O0 $(DEFINES) $(NETCDFINCS) -I../../../include
-AM_LDFLAGS = -L../../../lib -L../../cedric/source -lz
 sprint_SOURCES = $(SRCS)
-sprint_FFLAGS = -DCEDRIC_USE_NCARG=0 $(AM_FFLAGS)
-sprint_LDADD = $(NETCDFLIBS) -lcedric
+sprint_FFLAGS = -g -O0 -std=legacy $(DEFINES) -fno-range-check \
+          -fsecond-underscore $(FINCLUDES)
+
+sprint_CFLAGS = -g -O0 $(DEFINES) -I../../../include
+sprint_LDFLAGS = -L../../../lib 
 all: all-am
 
 .SUFFIXES:
@@ -463,15 +450,15 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CCOSIN.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CDATE.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/CINITCOS.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/COUT.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SUNFOR.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dorade.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ishift.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/myio.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nexrad.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sprint-CCOSIN.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sprint-CDATE.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sprint-CINITCOS.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sprint-COUT.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sprint-SUNFOR.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sprint-dorade.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sprint-ishift.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sprint-myio.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sprint-nexrad.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -486,6 +473,132 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+
+sprint-CCOSIN.o: CCOSIN.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-CCOSIN.o -MD -MP -MF $(DEPDIR)/sprint-CCOSIN.Tpo -c -o sprint-CCOSIN.o `test -f 'CCOSIN.c' || echo '$(srcdir)/'`CCOSIN.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-CCOSIN.Tpo $(DEPDIR)/sprint-CCOSIN.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='CCOSIN.c' object='sprint-CCOSIN.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-CCOSIN.o `test -f 'CCOSIN.c' || echo '$(srcdir)/'`CCOSIN.c
+
+sprint-CCOSIN.obj: CCOSIN.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-CCOSIN.obj -MD -MP -MF $(DEPDIR)/sprint-CCOSIN.Tpo -c -o sprint-CCOSIN.obj `if test -f 'CCOSIN.c'; then $(CYGPATH_W) 'CCOSIN.c'; else $(CYGPATH_W) '$(srcdir)/CCOSIN.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-CCOSIN.Tpo $(DEPDIR)/sprint-CCOSIN.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='CCOSIN.c' object='sprint-CCOSIN.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-CCOSIN.obj `if test -f 'CCOSIN.c'; then $(CYGPATH_W) 'CCOSIN.c'; else $(CYGPATH_W) '$(srcdir)/CCOSIN.c'; fi`
+
+sprint-CDATE.o: CDATE.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-CDATE.o -MD -MP -MF $(DEPDIR)/sprint-CDATE.Tpo -c -o sprint-CDATE.o `test -f 'CDATE.c' || echo '$(srcdir)/'`CDATE.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-CDATE.Tpo $(DEPDIR)/sprint-CDATE.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='CDATE.c' object='sprint-CDATE.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-CDATE.o `test -f 'CDATE.c' || echo '$(srcdir)/'`CDATE.c
+
+sprint-CDATE.obj: CDATE.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-CDATE.obj -MD -MP -MF $(DEPDIR)/sprint-CDATE.Tpo -c -o sprint-CDATE.obj `if test -f 'CDATE.c'; then $(CYGPATH_W) 'CDATE.c'; else $(CYGPATH_W) '$(srcdir)/CDATE.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-CDATE.Tpo $(DEPDIR)/sprint-CDATE.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='CDATE.c' object='sprint-CDATE.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-CDATE.obj `if test -f 'CDATE.c'; then $(CYGPATH_W) 'CDATE.c'; else $(CYGPATH_W) '$(srcdir)/CDATE.c'; fi`
+
+sprint-CINITCOS.o: CINITCOS.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-CINITCOS.o -MD -MP -MF $(DEPDIR)/sprint-CINITCOS.Tpo -c -o sprint-CINITCOS.o `test -f 'CINITCOS.c' || echo '$(srcdir)/'`CINITCOS.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-CINITCOS.Tpo $(DEPDIR)/sprint-CINITCOS.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='CINITCOS.c' object='sprint-CINITCOS.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-CINITCOS.o `test -f 'CINITCOS.c' || echo '$(srcdir)/'`CINITCOS.c
+
+sprint-CINITCOS.obj: CINITCOS.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-CINITCOS.obj -MD -MP -MF $(DEPDIR)/sprint-CINITCOS.Tpo -c -o sprint-CINITCOS.obj `if test -f 'CINITCOS.c'; then $(CYGPATH_W) 'CINITCOS.c'; else $(CYGPATH_W) '$(srcdir)/CINITCOS.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-CINITCOS.Tpo $(DEPDIR)/sprint-CINITCOS.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='CINITCOS.c' object='sprint-CINITCOS.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-CINITCOS.obj `if test -f 'CINITCOS.c'; then $(CYGPATH_W) 'CINITCOS.c'; else $(CYGPATH_W) '$(srcdir)/CINITCOS.c'; fi`
+
+sprint-COUT.o: COUT.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-COUT.o -MD -MP -MF $(DEPDIR)/sprint-COUT.Tpo -c -o sprint-COUT.o `test -f 'COUT.c' || echo '$(srcdir)/'`COUT.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-COUT.Tpo $(DEPDIR)/sprint-COUT.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='COUT.c' object='sprint-COUT.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-COUT.o `test -f 'COUT.c' || echo '$(srcdir)/'`COUT.c
+
+sprint-COUT.obj: COUT.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-COUT.obj -MD -MP -MF $(DEPDIR)/sprint-COUT.Tpo -c -o sprint-COUT.obj `if test -f 'COUT.c'; then $(CYGPATH_W) 'COUT.c'; else $(CYGPATH_W) '$(srcdir)/COUT.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-COUT.Tpo $(DEPDIR)/sprint-COUT.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='COUT.c' object='sprint-COUT.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-COUT.obj `if test -f 'COUT.c'; then $(CYGPATH_W) 'COUT.c'; else $(CYGPATH_W) '$(srcdir)/COUT.c'; fi`
+
+sprint-SUNFOR.o: SUNFOR.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-SUNFOR.o -MD -MP -MF $(DEPDIR)/sprint-SUNFOR.Tpo -c -o sprint-SUNFOR.o `test -f 'SUNFOR.c' || echo '$(srcdir)/'`SUNFOR.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-SUNFOR.Tpo $(DEPDIR)/sprint-SUNFOR.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='SUNFOR.c' object='sprint-SUNFOR.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-SUNFOR.o `test -f 'SUNFOR.c' || echo '$(srcdir)/'`SUNFOR.c
+
+sprint-SUNFOR.obj: SUNFOR.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-SUNFOR.obj -MD -MP -MF $(DEPDIR)/sprint-SUNFOR.Tpo -c -o sprint-SUNFOR.obj `if test -f 'SUNFOR.c'; then $(CYGPATH_W) 'SUNFOR.c'; else $(CYGPATH_W) '$(srcdir)/SUNFOR.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-SUNFOR.Tpo $(DEPDIR)/sprint-SUNFOR.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='SUNFOR.c' object='sprint-SUNFOR.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-SUNFOR.obj `if test -f 'SUNFOR.c'; then $(CYGPATH_W) 'SUNFOR.c'; else $(CYGPATH_W) '$(srcdir)/SUNFOR.c'; fi`
+
+sprint-dorade.o: dorade.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-dorade.o -MD -MP -MF $(DEPDIR)/sprint-dorade.Tpo -c -o sprint-dorade.o `test -f 'dorade.c' || echo '$(srcdir)/'`dorade.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-dorade.Tpo $(DEPDIR)/sprint-dorade.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='dorade.c' object='sprint-dorade.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-dorade.o `test -f 'dorade.c' || echo '$(srcdir)/'`dorade.c
+
+sprint-dorade.obj: dorade.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-dorade.obj -MD -MP -MF $(DEPDIR)/sprint-dorade.Tpo -c -o sprint-dorade.obj `if test -f 'dorade.c'; then $(CYGPATH_W) 'dorade.c'; else $(CYGPATH_W) '$(srcdir)/dorade.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-dorade.Tpo $(DEPDIR)/sprint-dorade.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='dorade.c' object='sprint-dorade.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-dorade.obj `if test -f 'dorade.c'; then $(CYGPATH_W) 'dorade.c'; else $(CYGPATH_W) '$(srcdir)/dorade.c'; fi`
+
+sprint-myio.o: myio.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-myio.o -MD -MP -MF $(DEPDIR)/sprint-myio.Tpo -c -o sprint-myio.o `test -f 'myio.c' || echo '$(srcdir)/'`myio.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-myio.Tpo $(DEPDIR)/sprint-myio.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='myio.c' object='sprint-myio.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-myio.o `test -f 'myio.c' || echo '$(srcdir)/'`myio.c
+
+sprint-myio.obj: myio.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-myio.obj -MD -MP -MF $(DEPDIR)/sprint-myio.Tpo -c -o sprint-myio.obj `if test -f 'myio.c'; then $(CYGPATH_W) 'myio.c'; else $(CYGPATH_W) '$(srcdir)/myio.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-myio.Tpo $(DEPDIR)/sprint-myio.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='myio.c' object='sprint-myio.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-myio.obj `if test -f 'myio.c'; then $(CYGPATH_W) 'myio.c'; else $(CYGPATH_W) '$(srcdir)/myio.c'; fi`
+
+sprint-nexrad.o: nexrad.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-nexrad.o -MD -MP -MF $(DEPDIR)/sprint-nexrad.Tpo -c -o sprint-nexrad.o `test -f 'nexrad.c' || echo '$(srcdir)/'`nexrad.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-nexrad.Tpo $(DEPDIR)/sprint-nexrad.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='nexrad.c' object='sprint-nexrad.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-nexrad.o `test -f 'nexrad.c' || echo '$(srcdir)/'`nexrad.c
+
+sprint-nexrad.obj: nexrad.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-nexrad.obj -MD -MP -MF $(DEPDIR)/sprint-nexrad.Tpo -c -o sprint-nexrad.obj `if test -f 'nexrad.c'; then $(CYGPATH_W) 'nexrad.c'; else $(CYGPATH_W) '$(srcdir)/nexrad.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-nexrad.Tpo $(DEPDIR)/sprint-nexrad.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='nexrad.c' object='sprint-nexrad.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-nexrad.obj `if test -f 'nexrad.c'; then $(CYGPATH_W) 'nexrad.c'; else $(CYGPATH_W) '$(srcdir)/nexrad.c'; fi`
+
+sprint-ishift.o: ishift.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-ishift.o -MD -MP -MF $(DEPDIR)/sprint-ishift.Tpo -c -o sprint-ishift.o `test -f 'ishift.c' || echo '$(srcdir)/'`ishift.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-ishift.Tpo $(DEPDIR)/sprint-ishift.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ishift.c' object='sprint-ishift.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-ishift.o `test -f 'ishift.c' || echo '$(srcdir)/'`ishift.c
+
+sprint-ishift.obj: ishift.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -MT sprint-ishift.obj -MD -MP -MF $(DEPDIR)/sprint-ishift.Tpo -c -o sprint-ishift.obj `if test -f 'ishift.c'; then $(CYGPATH_W) 'ishift.c'; else $(CYGPATH_W) '$(srcdir)/ishift.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sprint-ishift.Tpo $(DEPDIR)/sprint-ishift.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='ishift.c' object='sprint-ishift.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sprint_CFLAGS) $(CFLAGS) -c -o sprint-ishift.obj `if test -f 'ishift.c'; then $(CYGPATH_W) 'ishift.c'; else $(CYGPATH_W) '$(srcdir)/ishift.c'; fi`
 
 .f.o:
 	$(AM_V_F77)$(F77COMPILE) -c -o $@ $<
@@ -672,6 +785,12 @@ sprint-GENAZM.o: GENAZM.f
 
 sprint-GENAZM.obj: GENAZM.f
 	$(AM_V_F77)$(F77) $(sprint_FFLAGS) $(FFLAGS) -c -o sprint-GENAZM.obj `if test -f 'GENAZM.f'; then $(CYGPATH_W) 'GENAZM.f'; else $(CYGPATH_W) '$(srcdir)/GENAZM.f'; fi`
+
+sprint-GETNAME.o: GETNAME.f
+	$(AM_V_F77)$(F77) $(sprint_FFLAGS) $(FFLAGS) -c -o sprint-GETNAME.o `test -f 'GETNAME.f' || echo '$(srcdir)/'`GETNAME.f
+
+sprint-GETNAME.obj: GETNAME.f
+	$(AM_V_F77)$(F77) $(sprint_FFLAGS) $(FFLAGS) -c -o sprint-GETNAME.obj `if test -f 'GETNAME.f'; then $(CYGPATH_W) 'GETNAME.f'; else $(CYGPATH_W) '$(srcdir)/GETNAME.f'; fi`
 
 sprint-HEDSET.o: HEDSET.f
 	$(AM_V_F77)$(F77) $(sprint_FFLAGS) $(FFLAGS) -c -o sprint-HEDSET.o `test -f 'HEDSET.f' || echo '$(srcdir)/'`HEDSET.f
@@ -1381,6 +1500,11 @@ uninstall-am: uninstall-binPROGRAMS
 	ps ps-am tags tags-am uninstall uninstall-am \
 	uninstall-binPROGRAMS
 
+
+#sprint_FFLAGS = $(AM_FFLAGS)
+
+# FINCLUDES = -I../../../include
+#sprint_LDADD = $(NETCDFLIBS) -lcedric
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
