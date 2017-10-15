@@ -146,7 +146,7 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = $(SUBDIRS)
+DIST_SUBDIRS = cedric sprint tests ppi
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -284,7 +284,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = cedric sprint ppi tests
+@MAKE_WITH_NCARG_FALSE@SUBDIRS = cedric sprint tests
+@MAKE_WITH_NCARG_TRUE@SUBDIRS = cedric sprint ppi tests
 all: all-recursive
 
 .SUFFIXES:

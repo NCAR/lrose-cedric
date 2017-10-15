@@ -17,6 +17,7 @@
 # makefile.am for ppi
 #
 
+
 VPATH = @srcdir@
 am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'
 am__make_running_with_option = \
@@ -91,8 +92,15 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/cedric/source/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__installdirs = "$(DESTDIR)$(bindir)"
-PROGRAMS = $(bin_PROGRAMS)
+LIBRARIES = $(noinst_LIBRARIES)
+AR = ar
+ARFLAGS = cru
+AM_V_AR = $(am__v_AR_@AM_V@)
+am__v_AR_ = $(am__v_AR_@AM_DEFAULT_V@)
+am__v_AR_0 = @echo "  AR      " $@;
+am__v_AR_1 = 
+libppi_a_AR = $(AR) $(ARFLAGS)
+libppi_a_LIBADD =
 am__objects_1 = ADIABLWC.$(OBJEXT) ANLYTIC.$(OBJEXT) ARC.$(OBJEXT) \
 	ASDPMD.$(OBJEXT) ATTEN.$(OBJEXT) AZLIM.$(OBJEXT) \
 	BSCN.$(OBJEXT) CALIB.$(OBJEXT) COLTAB.$(OBJEXT) \
@@ -124,60 +132,69 @@ am__objects_1 = ADIABLWC.$(OBJEXT) ANLYTIC.$(OBJEXT) ARC.$(OBJEXT) \
 	PLTHIST.$(OBJEXT) PLTMRK.$(OBJEXT) PLTRNGE.$(OBJEXT) \
 	PLTSCAN.$(OBJEXT) PLTSCAT.$(OBJEXT) PLTSPEC.$(OBJEXT) \
 	PLTSWAT.$(OBJEXT) PLTVAD.$(OBJEXT) PLTVEC.$(OBJEXT) \
-	POWER.$(OBJEXT) PPIWIN.$(OBJEXT) PPI_MMM.$(OBJEXT) \
-	PRLASTFF.$(OBJEXT) PRLASTUF.$(OBJEXT) PRVOLMFF.$(OBJEXT) \
-	RANDOM.$(OBJEXT) RANF.$(OBJEXT) RDFF.$(OBJEXT) RDHDR.$(OBJEXT) \
-	RDHRD.$(OBJEXT) RDUF.$(OBJEXT) REC.$(OBJEXT) REFLECT.$(OBJEXT) \
-	RESETBG.$(OBJEXT) RFFT.$(OBJEXT) RHIWIN.$(OBJEXT) \
-	RNGLIM.$(OBJEXT) RNGST.$(OBJEXT) ROTATE.$(OBJEXT) \
-	SAVANGL.$(OBJEXT) SAVFUN.$(OBJEXT) SAVHIST.$(OBJEXT) \
-	SAVPLT.$(OBJEXT) SAVRNGE.$(OBJEXT) SAVSCAN.$(OBJEXT) \
-	SAVSCAT.$(OBJEXT) SAVSPEC.$(OBJEXT) SAVVAD.$(OBJEXT) \
-	SAVVEC.$(OBJEXT) SCANERR.$(OBJEXT) SETCOL.$(OBJEXT) \
-	SETLIN.$(OBJEXT) SETLWC.$(OBJEXT) SETWIN.$(OBJEXT) \
-	SIGPOW.$(OBJEXT) SMOOTH.$(OBJEXT) SMSPCT.$(OBJEXT) \
-	SMTH2D.$(OBJEXT) SNR.$(OBJEXT) SPAL.$(OBJEXT) SPQUAD.$(OBJEXT) \
-	STDEV.$(OBJEXT) STORE.$(OBJEXT) SUMDB.$(OBJEXT) \
-	SUMFLD.$(OBJEXT) SURWIN.$(OBJEXT) SWATH.$(OBJEXT) \
-	SWAP16.$(OBJEXT) TAPER.$(OBJEXT) TENLOG.$(OBJEXT) \
-	TERP.$(OBJEXT) THRESH.$(OBJEXT) UFREC.$(OBJEXT) \
-	UFSPEC.$(OBJEXT) UFWRITE.$(OBJEXT) UNFOLD.$(OBJEXT) \
-	UNPCK.$(OBJEXT) VAD.$(OBJEXT) VECTORS.$(OBJEXT) \
-	VEC_DIR.$(OBJEXT) VEC_MAG.$(OBJEXT) VUNF.$(OBJEXT) \
-	WINTGR.$(OBJEXT) XTREMA.$(OBJEXT) XVCOR.$(OBJEXT) \
-	XY2LL.$(OBJEXT) XY2LLDRV.$(OBJEXT) ZSLAB.$(OBJEXT) \
-	pcpfactor.$(OBJEXT) turbalg.$(OBJEXT) varcrv.$(OBJEXT) \
-	CEILING.$(OBJEXT) FLOOR.$(OBJEXT) SMTH1D.$(OBJEXT) \
-	PLT_TS.$(OBJEXT) RDLIDAR.$(OBJEXT) FLDIDLID.$(OBJEXT) \
-	TOPO.$(OBJEXT) DETRND.$(OBJEXT) PRNTFLD.$(OBJEXT) \
-	EPSILON.$(OBJEXT) PRODFLD.$(OBJEXT) DIVFLD.$(OBJEXT) \
-	LABCOL_NON.$(OBJEXT) DOREC.$(OBJEXT) FLDIDDO.$(OBJEXT) \
-	RDDO.$(OBJEXT) RA_SHFT.$(OBJEXT) R_SHFT.$(OBJEXT) \
-	AREA.$(OBJEXT) PLOTBOX.$(OBJEXT) PLOTAREA.$(OBJEXT) \
-	INITAREA.$(OBJEXT) CORRANA.$(OBJEXT) DECLUTTER.$(OBJEXT) \
-	SAVSWTH.$(OBJEXT) AVRAGE.$(OBJEXT) PLTAE.$(OBJEXT) \
-	PLT_RGLOC.$(OBJEXT) VADCOVI.$(OBJEXT) VADCOVF.$(OBJEXT) \
-	VADFLD.$(OBJEXT) RADVEL.$(OBJEXT) MACHSIZ.$(OBJEXT) \
-	PLTPROJ.$(OBJEXT) ETA.$(OBJEXT) SAVLIST.$(OBJEXT) \
-	LISTFLD.$(OBJEXT) FLDIDNEX.$(OBJEXT) RDNEXRAD.$(OBJEXT) \
-	VERDATE.$(OBJEXT) CONDAVG.$(OBJEXT) TSTCOL.$(OBJEXT) \
-	SETGRAY.$(OBJEXT) SETGRID.$(OBJEXT) ccosin.$(OBJEXT) \
-	cdate.$(OBJEXT) cinitcos.$(OBJEXT) sunfor.$(OBJEXT) \
-	getlidar.$(OBJEXT) GRIDACT.$(OBJEXT) FINDSTRING.$(OBJEXT) \
-	TEXTBOX.$(OBJEXT) USTOPO.$(OBJEXT) topo.$(OBJEXT) \
-	ELTOPO.$(OBJEXT) MAXIMUM.$(OBJEXT) MINIMUM.$(OBJEXT) \
-	UVD_STD.$(OBJEXT) rdrec.$(OBJEXT) dorade.$(OBJEXT) \
-	nexrad.$(OBJEXT) LAT_LON.$(OBJEXT) USRORIGIN.$(OBJEXT) \
-	PLTNET.$(OBJEXT) PLT_CLOCK.$(OBJEXT) PLT_PERCENT.$(OBJEXT) \
-	GAM_DSD.$(OBJEXT) GETNLD.$(OBJEXT) PLTNLD.$(OBJEXT) \
-	DBZ_DBM.$(OBJEXT) GETLMA.$(OBJEXT) PLTLMA.$(OBJEXT) \
-	GRAD.$(OBJEXT) GETSND.$(OBJEXT) SOUND.$(OBJEXT) \
-	VT_DBZ.$(OBJEXT) myio.$(OBJEXT) COR_RA.$(OBJEXT) \
-	LSTSQR.$(OBJEXT) ABSVAL.$(OBJEXT) GRID_BOX.$(OBJEXT) \
-	SETBCKGRND.$(OBJEXT) WSPEC.$(OBJEXT) PLTHZ.$(OBJEXT)
-am_ppi_OBJECTS = $(am__objects_1)
+	POWER.$(OBJEXT) PRLASTFF.$(OBJEXT) PRLASTUF.$(OBJEXT) \
+	PRVOLMFF.$(OBJEXT) RANDOM.$(OBJEXT) RANF.$(OBJEXT) \
+	RDFF.$(OBJEXT) RDHDR.$(OBJEXT) RDHRD.$(OBJEXT) RDUF.$(OBJEXT) \
+	REC.$(OBJEXT) REFLECT.$(OBJEXT) RESETBG.$(OBJEXT) \
+	RFFT.$(OBJEXT) RHIWIN.$(OBJEXT) RNGLIM.$(OBJEXT) \
+	RNGST.$(OBJEXT) ROTATE.$(OBJEXT) SAVANGL.$(OBJEXT) \
+	SAVFUN.$(OBJEXT) SAVHIST.$(OBJEXT) SAVPLT.$(OBJEXT) \
+	SAVRNGE.$(OBJEXT) SAVSCAN.$(OBJEXT) SAVSCAT.$(OBJEXT) \
+	SAVSPEC.$(OBJEXT) SAVVAD.$(OBJEXT) SAVVEC.$(OBJEXT) \
+	SCANERR.$(OBJEXT) SETCOL.$(OBJEXT) SETLIN.$(OBJEXT) \
+	SETLWC.$(OBJEXT) SETWIN.$(OBJEXT) SIGPOW.$(OBJEXT) \
+	SMOOTH.$(OBJEXT) SMSPCT.$(OBJEXT) SMTH2D.$(OBJEXT) \
+	SNR.$(OBJEXT) SPAL.$(OBJEXT) SPQUAD.$(OBJEXT) STDEV.$(OBJEXT) \
+	STORE.$(OBJEXT) SUMDB.$(OBJEXT) SUMFLD.$(OBJEXT) \
+	SURWIN.$(OBJEXT) SWATH.$(OBJEXT) SWAP16.$(OBJEXT) \
+	TAPER.$(OBJEXT) TENLOG.$(OBJEXT) TERP.$(OBJEXT) \
+	THRESH.$(OBJEXT) UFREC.$(OBJEXT) UFSPEC.$(OBJEXT) \
+	UFWRITE.$(OBJEXT) UNFOLD.$(OBJEXT) UNPCK.$(OBJEXT) \
+	VAD.$(OBJEXT) VECTORS.$(OBJEXT) VEC_DIR.$(OBJEXT) \
+	VEC_MAG.$(OBJEXT) VUNF.$(OBJEXT) WINTGR.$(OBJEXT) \
+	XTREMA.$(OBJEXT) XVCOR.$(OBJEXT) XY2LL.$(OBJEXT) \
+	XY2LLDRV.$(OBJEXT) ZSLAB.$(OBJEXT) pcpfactor.$(OBJEXT) \
+	turbalg.$(OBJEXT) varcrv.$(OBJEXT) CEILING.$(OBJEXT) \
+	FLOOR.$(OBJEXT) SMTH1D.$(OBJEXT) PLT_TS.$(OBJEXT) \
+	RDLIDAR.$(OBJEXT) FLDIDLID.$(OBJEXT) TOPO.$(OBJEXT) \
+	DETRND.$(OBJEXT) PRNTFLD.$(OBJEXT) EPSILON.$(OBJEXT) \
+	PRODFLD.$(OBJEXT) DIVFLD.$(OBJEXT) LABCOL_NON.$(OBJEXT) \
+	DOREC.$(OBJEXT) FLDIDDO.$(OBJEXT) RDDO.$(OBJEXT) \
+	RA_SHFT.$(OBJEXT) R_SHFT.$(OBJEXT) AREA.$(OBJEXT) \
+	PLOTBOX.$(OBJEXT) PLOTAREA.$(OBJEXT) INITAREA.$(OBJEXT) \
+	CORRANA.$(OBJEXT) DECLUTTER.$(OBJEXT) SAVSWTH.$(OBJEXT) \
+	AVRAGE.$(OBJEXT) PLTAE.$(OBJEXT) PLT_RGLOC.$(OBJEXT) \
+	VADCOVI.$(OBJEXT) VADCOVF.$(OBJEXT) VADFLD.$(OBJEXT) \
+	RADVEL.$(OBJEXT) MACHSIZ.$(OBJEXT) PLTPROJ.$(OBJEXT) \
+	ETA.$(OBJEXT) SAVLIST.$(OBJEXT) LISTFLD.$(OBJEXT) \
+	FLDIDNEX.$(OBJEXT) RDNEXRAD.$(OBJEXT) VERDATE.$(OBJEXT) \
+	CONDAVG.$(OBJEXT) TSTCOL.$(OBJEXT) SETGRAY.$(OBJEXT) \
+	SETGRID.$(OBJEXT) ccosin.$(OBJEXT) cdate.$(OBJEXT) \
+	cinitcos.$(OBJEXT) sunfor.$(OBJEXT) getlidar.$(OBJEXT) \
+	GRIDACT.$(OBJEXT) FINDSTRING.$(OBJEXT) TEXTBOX.$(OBJEXT) \
+	USTOPO.$(OBJEXT) topo.$(OBJEXT) ELTOPO.$(OBJEXT) \
+	MAXIMUM.$(OBJEXT) MINIMUM.$(OBJEXT) UVD_STD.$(OBJEXT) \
+	rdrec.$(OBJEXT) dorade.$(OBJEXT) nexrad.$(OBJEXT) \
+	LAT_LON.$(OBJEXT) USRORIGIN.$(OBJEXT) PLTNET.$(OBJEXT) \
+	PLT_CLOCK.$(OBJEXT) PLT_PERCENT.$(OBJEXT) GAM_DSD.$(OBJEXT) \
+	GETNLD.$(OBJEXT) PLTNLD.$(OBJEXT) DBZ_DBM.$(OBJEXT) \
+	GETLMA.$(OBJEXT) PLTLMA.$(OBJEXT) GRAD.$(OBJEXT) \
+	GETSND.$(OBJEXT) SOUND.$(OBJEXT) VT_DBZ.$(OBJEXT) \
+	myio.$(OBJEXT) COR_RA.$(OBJEXT) LSTSQR.$(OBJEXT) \
+	ABSVAL.$(OBJEXT) GRID_BOX.$(OBJEXT) SETBCKGRND.$(OBJEXT) \
+	WSPEC.$(OBJEXT) PLTHZ.$(OBJEXT)
+am_libppi_a_OBJECTS = $(am__objects_1)
+libppi_a_OBJECTS = $(am_libppi_a_OBJECTS)
+am__installdirs = "$(DESTDIR)$(bindir)"
+PROGRAMS = $(bin_PROGRAMS)
+am__objects_2 = ppi-PPIWIN.$(OBJEXT) ppi-PPI_MMM.$(OBJEXT)
+am_ppi_OBJECTS = $(am__objects_2)
 ppi_OBJECTS = $(am_ppi_OBJECTS)
-ppi_LDADD = $(LDADD)
+am__DEPENDENCIES_1 =
+ppi_DEPENDENCIES = libppi.a libcedric.a libgcedric.a libcedric.a \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ppi_LINK = $(F77LD) $(ppi_FFLAGS) $(FFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+	-o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -206,6 +223,10 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+am__v_lt_0 = --silent
+am__v_lt_1 = 
 F77COMPILE = $(F77) $(AM_FFLAGS) $(FFLAGS)
 AM_V_F77 = $(am__v_F77_@AM_V@)
 am__v_F77_ = $(am__v_F77_@AM_DEFAULT_V@)
@@ -218,8 +239,8 @@ AM_V_F77LD = $(am__v_F77LD_@AM_V@)
 am__v_F77LD_ = $(am__v_F77LD_@AM_DEFAULT_V@)
 am__v_F77LD_0 = @echo "  F77LD   " $@;
 am__v_F77LD_1 = 
-SOURCES = $(ppi_SOURCES)
-DIST_SOURCES = $(ppi_SOURCES)
+SOURCES = $(libppi_a_SOURCES) $(ppi_SOURCES)
+DIST_SOURCES = $(libppi_a_SOURCES) $(ppi_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -340,7 +361,14 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SRCS = ADIABLWC.f	ANLYTIC.f	ARC.f		ASDPMD.f \
+noinst_LIBRARIES = libppi.a
+
+# These modules depend on the CEDRIC_USE_NCARG macro.
+MAINSRCS = PPIWIN.f PPI_MMM.f
+
+# LIB sources
+LIBSRCS = \
+	ADIABLWC.f	ANLYTIC.f	ARC.f		ASDPMD.f \
 	ATTEN.f 	AZLIM.f 	BSCN.f		CALIB.f \
 	COLTAB.f	CONFILL1.f	CONFILL2.f	CONLEV.f \
 	CONTUR.f	CONVERT.f	COORD.f		COPWIN.f \
@@ -364,7 +392,7 @@ SRCS = ADIABLWC.f	ANLYTIC.f	ARC.f		ASDPMD.f \
 	PLTANGL.f	PLTGRD.f	PLTHIST.f	PLTMRK.f \
 	PLTRNGE.f 	PLTSCAN.f	PLTSCAT.f	PLTSPEC.f \
 	PLTSWAT.f	PLTVAD.f	PLTVEC.f 	POWER.f \
-	PPIWIN.f	PPI_MMM.f	PRLASTFF.f	PRLASTUF.f \
+	PRLASTFF.f	PRLASTUF.f \
 	PRVOLMFF.f 	RANDOM.f	RANF.f		RDFF.f \
 	RDHDR.f		RDHRD.f 	RDUF.f		REC.f \
 	REFLECT.f 	RESETBG.f	RFFT.f		RHIWIN.f \
@@ -415,7 +443,11 @@ AM_FFLAGS = $(AM_CFLAGS) -std=legacy -fno-range-check \
 # link flags
 AM_LDFLAGS = -L. -L../../../lib -L$(prefix)/lib \
 	-Wl,-rpath=$(prefix)/lib
-ppi_SOURCES = $(SRCS)
+LD_ADD = $(NETCDFLIBS) libppi.a
+ppi_SOURCES = $(MAINSRCS)
+libppi_a_SOURCES = $(LIBSRCS)
+ppi_FFLAGS = -DCEDRIC_USE_NCARG=1 $(AM_FFLAGS) $(NCARGINCS)
+ppi_LDADD = libppi.a libcedric.a libgcedric.a libcedric.a $(NCARGLIBS) $(XLIBS) $(NETCDFLIBS)
 all: all-am
 
 .SUFFIXES:
@@ -450,6 +482,14 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
+
+clean-noinstLIBRARIES:
+	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+
+libppi.a: $(libppi_a_OBJECTS) $(libppi_a_DEPENDENCIES) $(EXTRA_libppi_a_DEPENDENCIES) 
+	$(AM_V_at)-rm -f libppi.a
+	$(AM_V_AR)$(libppi_a_AR) libppi.a $(libppi_a_OBJECTS) $(libppi_a_LIBADD)
+	$(AM_V_at)$(RANLIB) libppi.a
 install-binPROGRAMS: $(bin_PROGRAMS)
 	@$(NORMAL_INSTALL)
 	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
@@ -495,7 +535,7 @@ clean-binPROGRAMS:
 
 ppi$(EXEEXT): $(ppi_OBJECTS) $(ppi_DEPENDENCIES) $(EXTRA_ppi_DEPENDENCIES) 
 	@rm -f ppi$(EXEEXT)
-	$(AM_V_F77LD)$(F77LINK) $(ppi_OBJECTS) $(ppi_LDADD) $(LIBS)
+	$(AM_V_F77LD)$(ppi_LINK) $(ppi_OBJECTS) $(ppi_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -533,6 +573,18 @@ distclean-compile:
 
 .f.obj:
 	$(AM_V_F77)$(F77COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+ppi-PPIWIN.o: PPIWIN.f
+	$(AM_V_F77)$(F77) $(ppi_FFLAGS) $(FFLAGS) -c -o ppi-PPIWIN.o `test -f 'PPIWIN.f' || echo '$(srcdir)/'`PPIWIN.f
+
+ppi-PPIWIN.obj: PPIWIN.f
+	$(AM_V_F77)$(F77) $(ppi_FFLAGS) $(FFLAGS) -c -o ppi-PPIWIN.obj `if test -f 'PPIWIN.f'; then $(CYGPATH_W) 'PPIWIN.f'; else $(CYGPATH_W) '$(srcdir)/PPIWIN.f'; fi`
+
+ppi-PPI_MMM.o: PPI_MMM.f
+	$(AM_V_F77)$(F77) $(ppi_FFLAGS) $(FFLAGS) -c -o ppi-PPI_MMM.o `test -f 'PPI_MMM.f' || echo '$(srcdir)/'`PPI_MMM.f
+
+ppi-PPI_MMM.obj: PPI_MMM.f
+	$(AM_V_F77)$(F77) $(ppi_FFLAGS) $(FFLAGS) -c -o ppi-PPI_MMM.obj `if test -f 'PPI_MMM.f'; then $(CYGPATH_W) 'PPI_MMM.f'; else $(CYGPATH_W) '$(srcdir)/PPI_MMM.f'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
@@ -618,7 +670,7 @@ distdir: $(DISTFILES)
 	done
 check-am: all-am
 check: check-am
-all-am: Makefile $(PROGRAMS)
+all-am: Makefile $(LIBRARIES) $(PROGRAMS)
 installdirs:
 	for dir in "$(DESTDIR)$(bindir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
@@ -655,7 +707,8 @@ maintainer-clean-generic:
 	@echo "it deletes files that may require special tools to rebuild."
 clean: clean-am
 
-clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
+clean-am: clean-binPROGRAMS clean-generic clean-noinstLIBRARIES \
+	mostlyclean-am
 
 distclean: distclean-am
 	-rm -rf ./$(DEPDIR)
@@ -725,18 +778,18 @@ uninstall-am: uninstall-binPROGRAMS
 .MAKE: install-am install-strip
 
 .PHONY: CTAGS GTAGS TAGS all all-am check check-am clean \
-	clean-binPROGRAMS clean-generic cscopelist-am ctags ctags-am \
-	distclean distclean-compile distclean-generic distclean-tags \
-	distdir dvi dvi-am html html-am info info-am install \
-	install-am install-binPROGRAMS install-data install-data-am \
-	install-dvi install-dvi-am install-exec install-exec-am \
-	install-html install-html-am install-info install-info-am \
-	install-man install-pdf install-pdf-am install-ps \
-	install-ps-am install-strip installcheck installcheck-am \
-	installdirs maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
-	ps ps-am tags tags-am uninstall uninstall-am \
-	uninstall-binPROGRAMS
+	clean-binPROGRAMS clean-generic clean-noinstLIBRARIES \
+	cscopelist-am ctags ctags-am distclean distclean-compile \
+	distclean-generic distclean-tags distdir dvi dvi-am html \
+	html-am info info-am install install-am install-binPROGRAMS \
+	install-data install-data-am install-dvi install-dvi-am \
+	install-exec install-exec-am install-html install-html-am \
+	install-info install-info-am install-man install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
+	uninstall-am uninstall-binPROGRAMS
 
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

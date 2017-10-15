@@ -2,8 +2,16 @@
 #
 
 bin_PROGRAMS = ppi
+noinst_LIBRARIES = libppi.a
 
-SRCS =	ADIABLWC.f	ANLYTIC.f	ARC.f		ASDPMD.f \
+# These modules depend on the CEDRIC_USE_NCARG macro.
+
+MAINSRCS = PPIWIN.f PPI_MMM.f
+
+# LIB sources
+
+LIBSRCS = \
+	ADIABLWC.f	ANLYTIC.f	ARC.f		ASDPMD.f \
 	ATTEN.f 	AZLIM.f 	BSCN.f		CALIB.f \
 	COLTAB.f	CONFILL1.f	CONFILL2.f	CONLEV.f \
 	CONTUR.f	CONVERT.f	COORD.f		COPWIN.f \
@@ -27,7 +35,7 @@ SRCS =	ADIABLWC.f	ANLYTIC.f	ARC.f		ASDPMD.f \
 	PLTANGL.f	PLTGRD.f	PLTHIST.f	PLTMRK.f \
 	PLTRNGE.f 	PLTSCAN.f	PLTSCAT.f	PLTSPEC.f \
 	PLTSWAT.f	PLTVAD.f	PLTVEC.f 	POWER.f \
-	PPIWIN.f	PPI_MMM.f	PRLASTFF.f	PRLASTUF.f \
+	PRLASTFF.f	PRLASTUF.f \
 	PRVOLMFF.f 	RANDOM.f	RANF.f		RDFF.f \
 	RDHDR.f		RDHRD.f 	RDUF.f		REC.f \
 	REFLECT.f 	RESETBG.f	RFFT.f		RHIWIN.f \
@@ -89,5 +97,11 @@ AM_LDFLAGS += -L../../../lib
 AM_LDFLAGS += -L$(prefix)/lib
 AM_LDFLAGS += -Wl,-rpath=$(prefix)/lib
 
-ppi_SOURCES = $(SRCS)
+LD_ADD = $(NETCDFLIBS) libppi.a
 
+ppi_SOURCES = $(MAINSRCS)
+
+libppi_a_SOURCES = $(LIBSRCS)
+
+ppi_FFLAGS = -DCEDRIC_USE_NCARG=1 $(AM_FFLAGS) $(NCARGINCS)
+ppi_LDADD = libppi.a libcedric.a libgcedric.a libcedric.a $(NCARGLIBS) $(XLIBS) $(NETCDFLIBS)
