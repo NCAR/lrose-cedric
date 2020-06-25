@@ -4,7 +4,7 @@ This repository includes the CEDRIC, SPRINT, PPI, CEDIO, and GRID2PS tools for r
 
 ## DOI
 
-The DOI for lrose-reorder is:
+The DOI for lrose-cedric is:
 
 * [https://doi.org/10.5065/cnth-sa86](https://doi.org/10.5065/cnth-sa86)
 
