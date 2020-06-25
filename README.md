@@ -1,5 +1,16 @@
 # LROSE CEDRIC
+
 This repository includes the CEDRIC, SPRINT, PPI, CEDIO, and GRID2PS tools for radar data analysis
+
+## DOI
+
+The DOI for lrose-reorder is:
+
+* [https://doi.org/10.5065/cnth-sa85](https://doi.org/10.5065/cnth-sa85)
+
+The DOI entry information is stored at:
+
+* [https://search.datacite.org/works/10.5065/cnth-sa85](https://search.datacite.org/works/10.5065/cnth-sa85)
 
 ## Cedric
 
